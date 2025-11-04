@@ -1,9 +1,9 @@
 {{ include ('layouts/header.php', {title:'Livre'})}}
 <h1>Livre créé</h1>
-<a href="livre-index.php" class="btn bleu">Retour aux livres</a>
+<a href="{{ base }}/livres" class="btn bleu">Retour aux livres</a>
 
 <div class="conteneur">
-    <form action="livre-delete.php" method="post">
+    <form method="post">
         <p><strong>Titre: </strong>{{ livre.titre }}</p>
         <p><strong>Auteur: </strong>{{ livre.auteur_nom }}</p>
         <p><strong>Année de publication: </strong>{{ livre.annee_publication }}</p>

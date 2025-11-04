@@ -59,7 +59,7 @@
     <span class="error">{{ errors.editeur_id }}</span>
     {% endif %}
     <button type="submit" class="btn vert">Modifier</button>
-    <a href="{{base}}/livre/index" class="btn bleu">Annuler</a>
+    <a href="{{base}}/livres" class="btn bleu">Annuler</a>
 </form>
 
 {% include 'layouts/footer.php' %}
