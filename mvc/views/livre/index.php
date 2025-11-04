@@ -21,14 +21,14 @@
             <tr>
                 <td>{{ livre.id }}</td>
                 <td>{{ livre.titre }}</td>
-                <td>AUTEUR</td>
+                <td>{{ livre.auteur_nom }}</td>
                 <td>{{ livre.annee_publication }}</td>
                 <td>
                     <a href="{{base}}/livre/show?id={{livre.id}}" class="btn vert">Modifier</a>
                     <a href="{{base}}/livre/delete?id={{livre.id}}" class="btn rouge" onclick="return confirm('Supprimer ce livre ?')">Supprimer</a>
                 </td>
-                <td>CATEGORIE</td>
-                <td>EDITEUR</td>
+                <td>{{ livre.categorie_nom }}</td>
+                <td>{{ livre.editeur_nom }}</td>
             </tr>
             {% endfor %}
         </tbody>

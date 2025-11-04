@@ -25,7 +25,7 @@
     {% endif %}
     <div>
         <label for="annee_publication">Année de publication :</label>
-        <input type="number" name="annee_publication" id="annee_publication" min="1900" max="2030" value="{{ inputs.annee_publication }}">
+        <input type="number" name="annee_publication" id="annee_publication" min="1900" max="2030" value="{{ inputs.annee_publication ?? livre.annee_publication }}">
     </div>
     {% if errors.annee_publication is defined %}
     <span class="error">{{ errors.annee_publication }}</span>
@@ -58,7 +58,7 @@
     {% if errors.editeur_id is defined %}
     <span class="error">{{ errors.editeur_id }}</span>
     {% endif %}
-    <button type="submit" class="btn vert">Ajouter</button>
+    <button type="submit" class="btn vert">Modifier</button>
     <a href="{{base}}/livre/index" class="btn bleu">Annuler</a>
 </form>
 

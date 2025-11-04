@@ -13,6 +13,7 @@ Route::get('/livre/show', 'LivreController@show');
 Route::get('/livre/create', 'LivreController@create');
 Route::post('/livre/create', 'LivreController@store');
 Route::get('/livre/edit', 'LivreController@edit');
+Route::post('/livre/edit', 'LivreController@update');
 Route::get('/livre/delete', 'LivreController@delete');
 
 Route::dispatch();
