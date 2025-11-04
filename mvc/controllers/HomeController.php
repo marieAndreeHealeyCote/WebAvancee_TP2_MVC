@@ -2,11 +2,13 @@
 
 namespace App\Controllers;
 
+use App\Providers\View;
+
 class HomeController
 {
     public function index()
     {
-        $data = "Hello from ExampleModel!";
-        include('views/home.php');
+        $data = "Bienvenue sur HOMEPAGE!";
+        return View::render("home", ['data' => $data]);
     }
 }

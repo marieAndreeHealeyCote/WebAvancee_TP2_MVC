@@ -3,8 +3,8 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <title>TP1 - Système web PHP orienté objet avec une base de données MySQL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
     <link rel="stylesheet" href="{{ asset }}css/style.css">
 </head>
 
@@ -12,7 +12,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="livre-index.php">Accueil</a></li>
+                <li><a href="{{base}}/client">Accueil</a></li>
                 <li><a href="#">Liste des Auteurs</a></li>
                 <li><a href="#">Liste des Catégories</a></li>
                 <li><a href="#">Liste des Éditeurs</a></li>

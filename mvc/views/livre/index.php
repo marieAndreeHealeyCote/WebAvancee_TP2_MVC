@@ -32,7 +32,6 @@
                 <td>{{ categorieObj->getById(livre.categorie_id).nom }}</td>
                 <td>{{ editeurObj->getById(livre.editeur_id).nom }}</td>
             </tr>
-            {% endfor %}
         </tbody>
     </table>
 
