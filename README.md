@@ -1,6 +1,6 @@
 # TP2 : Architecture MVC
 
-## Depuis le TP1, devoir migrer le projet vers l'architecture MVC.
+### Depuis le TP1, devoir migrer le projet vers l'architecture MVC.
 
 ## Développement:
 
