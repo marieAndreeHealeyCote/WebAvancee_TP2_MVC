@@ -31,13 +31,6 @@
     <span class="error">{{ errors.annee_publication }}</span>
     {% endif %}
     <div>
-        <label for="genre">Genre :</label>
-        <input type="text" name="genre" id="genre" required value="{{ inputs.genre }}">
-    </div>
-    {% if errors.genre is defined %}
-    <span class="error">{{ errors.genre }}</span>
-    {% endif %}
-    <div>
         <label for="categorie_id">Catégorie :</label>
         <select name="categorie_id" id="categorie_id">
             <option value="" disabled>-- Sélectionner --</option>

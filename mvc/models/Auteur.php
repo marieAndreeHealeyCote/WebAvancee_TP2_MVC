@@ -6,7 +6,7 @@ use App\Models\CRUD;
 
 class Auteur extends CRUD
 {
-    protected $table = 'auteur';
+    protected $table = 'auteurs';
     protected $primaryKey = 'id';
     protected $fillable = ['nom'];
 }

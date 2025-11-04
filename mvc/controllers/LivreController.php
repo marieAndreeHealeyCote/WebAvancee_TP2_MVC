@@ -15,8 +15,37 @@ class LivreController
     public function index()
     {
         $livre = new Livre;
-        $select = $livre->select();
-        include('views/livre/index.php');
+        $selectLivre = $livre->select();
+
+        $listeLivres = [];
+        foreach ($selectLivre as $tmp) {
+            $auteur_id = $tmp['auteur_id'];
+            $categorie_id = $tmp['categorie_id'];
+            $editeur_id = $tmp['editeur_id'];
+
+            $auteur = new Auteur;
+            $selectAuteur = $auteur->selectId($auteur_id);
+
+            $categorie = new Categorie;
+            $selectCategorie = $categorie->selectId($categorie_id);
+
+            $editeur = new Editeur;
+            $selectEditeur = $editeur->selectId($editeur_id);
+
+            $listeLivres[] = [
+                'id' => $tmp['id'],
+                'titre' => $tmp['titre'],
+                'auteur_id' => $tmp['auteur_id'],
+                'categorie_id' => $tmp['categorie_id'],
+                'editeur_id' => $tmp['editeur'],
+                'annee_publication' => $tmp['annee_publication'],
+            ];
+        }
+
+        if ($selectLivre) {
+            return View::render("livre/index", ['listeLivres' => $selectLivre]);
+        }
+        return View::render('error');
     }
 
     public function show($data = [])
@@ -41,9 +70,9 @@ class LivreController
 
                 return View::render("livre/show", [
                     'livre' => $selectLivre,
-                    'auteur' => $selectCategorie,
-                    'categorie' => $selectCategorie,
-                    'editeur' => $selectEditeur
+                    'listeAuteurs' => $selectCategorie,
+                    'listeCategories' => $selectCategorie,
+                    'listeEditeurs' => $selectEditeur
                 ]);
             } else {
                 return View::render('error', ['msg' => 'Livre not found!']);
@@ -105,11 +134,10 @@ class LivreController
     {
         $validator = new Validator;
         $validator->field('titre', $data['titre'])->required()->max(45);
-        $validator->field('auteur_id', $data['auteur'])->required()->int();
+        $validator->field('auteur_id', $data['auteur_id'])->required()->int();
         $validator->field('categorie_id', $data['categorie_id'])->required()->int();
         $validator->field('editeur_id', $data['editeur_id'])->required()->int();
         $validator->field('annee_publication', $data['annee_publication'])->required()->int()->max(4);
-        $validator->field('genre', $data['genre'])->required()->max(10);
 
         if ($validator->isSuccess()) {
             $livre = new Livre;

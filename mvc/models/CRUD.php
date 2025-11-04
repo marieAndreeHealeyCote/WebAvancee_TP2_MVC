@@ -19,9 +19,12 @@ abstract class CRUD extends \PDO
             $field = $this->primaryKey;
         }
         $sql = "SELECT * FROM $this->table ORDER BY $field $order";
-        // return  $sql;
-        $stmt = $this->query($sql);
-        return $stmt->fetchAll();
+
+        if ($stmt = $this->query($sql)) {
+            return $stmt->fetchAll();
+        } else {
+            return false;
+        }
     }
 
     final public function selectId($value)

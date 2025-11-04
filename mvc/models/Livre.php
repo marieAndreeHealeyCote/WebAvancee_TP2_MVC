@@ -6,7 +6,7 @@ use App\Models\CRUD;
 
 class Livre extends CRUD
 {
-    protected $table = 'livre';
+    protected $table = 'livres';
     protected $primaryKey = 'id';
-    protected $fillable = ['titre', 'annee_publication', 'genre', 'categorie_id', 'editeur_id', 'auteur_id'];
+    protected $fillable = ['titre', 'annee_publication', 'categorie_id', 'editeur_id', 'auteur_id'];
 }

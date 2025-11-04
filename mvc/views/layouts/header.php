@@ -12,7 +12,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="{{base}}/client">Accueil</a></li>
+                <li><a href="{{base}}/livres">Accueil</a></li>
                 <li><a href="#">Liste des Auteurs</a></li>
                 <li><a href="#">Liste des Catégories</a></li>
                 <li><a href="#">Liste des Éditeurs</a></li>
