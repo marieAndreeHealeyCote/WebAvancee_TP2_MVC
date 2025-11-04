@@ -4,7 +4,7 @@
 <form method="POST">
     <div>
         <label for="titre">Titre :</label>
-        <input type="text" name="titre" id="titre" value="{{ inputs.titre ?? livre.titre }}">
+        <input type="text" name="titre" id="titre" value="{{ inputs.titre }}">
     </div>
     {% if errors.titre is defined %}
     <span class="error">{{ errors.titre }}</span>
@@ -25,7 +25,7 @@
     {% endif %}
     <div>
         <label for="annee_publication">Année de publication :</label>
-        <input type="number" name="annee_publication" id="annee_publication" min="1900" max="2030" value="{{ inputs.annee_publication ?? livre.annee_publication }}">
+        <input type="number" name="annee_publication" id="annee_publication" min="1900" max="2030" value="{{ inputs.annee_publication }}">
     </div>
     {% if errors.annee_publication is defined %}
     <span class="error">{{ errors.annee_publication }}</span>

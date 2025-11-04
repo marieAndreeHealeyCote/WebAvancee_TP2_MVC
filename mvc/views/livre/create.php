@@ -14,7 +14,7 @@
         <select name="auteur_id" id="auteur_id">
             <option value="" disabled>-- Sélectionner --</option>
             {% for auteur in listeAuteurs %}
-            <option value="{{ auteur.id }}" {% if inputs.auteur_id  auteur.id == inputs.auteur_id %} selected {% endif %}>
+            <option value="{{ auteur.id }}" {% if auteur.id == inputs.auteur_id %} selected {% endif %}>
                 {{ auteur.nom }}
             </option>
             {% endfor %}

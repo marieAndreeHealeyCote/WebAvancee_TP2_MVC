@@ -86,7 +86,7 @@ class LivreController
                 $selectLivre['categorie_nom'] = $categorieNom;
                 $selectLivre['editeur_nom'] = $editeurNom;
 
-                return View::render("livre/show", ['livre' => $selectLivre]);
+                return View::render("livre/show", ['inputs' => $selectLivre]);
             } else {
                 return View::render('error', ['msg' => 'Livre not found!']);
             }
@@ -170,7 +170,7 @@ class LivreController
                 $listeEditeurs = $editeur->select();
 
                 return View::render("livre/edit", [
-                    'livre' => $selectLivre,
+                    'inputs' => $selectLivre,
                     'listeAuteurs' => $listeAuteurs,
                     'listeCategories' => $listeCategories,
                     'listeEditeurs' => $listeEditeurs,
