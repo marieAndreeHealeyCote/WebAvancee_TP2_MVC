@@ -232,7 +232,7 @@ class LivreController
         $livre = new Livre;
         $delete = $livre->delete($data['id']);
         if ($delete) {
-            return View::redirect('livre');
+            return View::redirect('livres');
         }
         return View::render('error');
     }

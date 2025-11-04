@@ -9,10 +9,10 @@
         <p><strong>Année de publication: </strong>{{ livre.annee_publication }}</p>
         <p><strong>Catégorie: </strong>{{ livre.categorie_nom }}</p>
         <p><strong>Éditeur: </strong>{{ livre.editeur_nom }}</p>
-        <a href="{{ base }}/livre/edit?id={{livre.id}}" class="btn bleu">Modifier</a>
+        <a href="{{ base }}/livre/edit?id={{livre.id}}" class="btn vert">Modifier</a>
 
         <input type="hidden" name="id" value="{{ livre.id }}">
-        <button type="submit" class="btn rouge">Supprimer</button>
+        <a href="{{base}}/livres" class="btn bleu">Annuler</a>
     </form>
 </div>
 {{ include ('layouts/footer.php')}}
